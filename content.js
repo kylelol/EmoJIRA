@@ -1,26 +1,3 @@
-/*console.log("DOING SOMETHING !!!!!")
-var elements = document.getElementsByClassName('ghx-field-icon');
-console.log("elements", elements)
-console.log("****length", Object.values(elements).length)
-
-for (var i = 0; i < elements.length; i++) {
-  console.log("looping")
-    var element = elements[i];
-    console.log("elements", element.attributes.data-tooltip)
-
-  /*  for (var j = 0; j < element.length; j++) {
-        var node = element[j];
-
-        if (node.nodeType === 3) {
-            var text = node.nodeValue;
-            console.log("text",text)
-            var replacedText = text.replace(/[word or phrase to replace here]/gi, '[new word or phrase]');
-
-            if (replacedText !== text) {
-                element.replaceChild(document.createTextNode(replacedText), node);
-            }
-        }
-    }*/
 
 //Max Attempts
 var maxAttempts = 10;
@@ -53,16 +30,15 @@ function waitForReady(callback, fallback) {
 
 //Continue with your code execution within this function
 function onwardFunction() {
-  console.log("elements", elements.length);
+
   for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
     var node = element.attributes['data-tooltip']
     var attribute = node.nodeValue
 
+    //TODO: Add more issue types and priorities. 
     if (attribute == "Bug") {
-      console.log("let replace something")
-      var replacedText = "🐛"
-      element.replaceWith(document.createTextNode(replacedText));
+      element.replaceWith(document.createTextNode("🐛"));
     } else if (attribute == "Story") {
       element.replaceWith(document.createTextNode("✨"))
     } else if (attribute == "Improvement") {
